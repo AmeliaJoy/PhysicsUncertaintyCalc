@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     {
         mappy = stripper.readLine(i);
         std::cout << NumberWithUncertainty::cosInDeg(mappy["theta"])<< '\n';
-        mappy["muk"] = (mappy["m2"]*9.8 - mappy["m1"]*NumberWithUncertainty::sinInDeg(mappy["theta"])*9.8-mappy["a"])/(mappy["m1"]*NumberWithUncertainty::cosInDeg(mappy["theta"])*9.8);
+        mappy["muk"] = (mappy["m2"]*9.8 - mappy["m1"]*NumberWithUncertainty::sinInDeg(mappy["theta"])*9.8-mappy["a"]*(mappy["m1"]+ mappy["m2"]))/(mappy["m1"]*NumberWithUncertainty::cosInDeg(mappy["theta"])*9.8);
         stripper.WriteLine("muk", mappy);
     }
     
